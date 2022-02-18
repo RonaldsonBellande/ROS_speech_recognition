@@ -13,10 +13,13 @@ catkin_python_setup()
 
 generate_messages(DEPENDENCIES actionlib_msgs)
 
-catkin_package(CATKIN_DEPENDS message_runtime actionlib_msgs
-               INCLUDE_DIRS include)
+catkin_package(
+  CATKIN_DEPENDS message_runtime actionlib_msgs
+  INCLUDE_DIRS include
+)
 
-catkin_install_python(PROGRAMS
+catkin_install_python(
+  PROGRAMS
   scripts/is_speaking.py
   scripts/playbuiltin.py
   scripts/play.py
@@ -25,18 +28,25 @@ catkin_install_python(PROGRAMS
   scripts/soundplay_node.py
   scripts/test.py
   scripts/test_actionlib_client.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
-install(FILES
+install(
+  FILES
   soundplay_node.launch
   test.launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
-install(DIRECTORY include/${PROJECT_NAME}/
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+install(
+  DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
 
-install(DIRECTORY sounds
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(
+  DIRECTORY sounds
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 # if(CATKIN_ENABLE_TESTING)
 #   catkin_add_nosetests(scripts/test)
