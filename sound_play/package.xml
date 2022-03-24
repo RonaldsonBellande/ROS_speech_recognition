@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 
-<package>
+<package format="2">
   <name>sound_play</name>
   <version>0.3.12</version>
   <description>plays sound</description>
 
-  <maintainer email="ronaldsonbellande@gmail.com">Ronaldson Bellande</maintainer>
+  <maintainer email="ronaldsonbellande@todo.todo">Ronaldson Bellande</maintainer>
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
-  <buildtool_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</buildtool_depend>
-  <buildtool_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_depend>
+  <!-- <buildtool_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</buildtool_depend> -->
+  <!-- <buildtool_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_depend> -->
 
   <build_depend>roscpp</build_depend>
   <build_depend>roslib</build_depend>
@@ -25,8 +25,8 @@
   <exec_depend>audio_common_msgs</exec_depend>
   <exec_depend>diagnostic_msgs</exec_depend>
 
-  <exec_depend condition="$ROS_PYTHON_VERSION == 2">python-gi</exec_depend>
-  <exec_depend condition="$ROS_PYTHON_VERSION == 3">python3-gi</exec_depend>
+  <!-- <exec_depend condition="$ROS_PYTHON_VERSION == 2">python-gi</exec_depend> -->
+  <!-- <exec_depend condition="$ROS_PYTHON_VERSION == 3">python3-gi</exec_depend> -->
   <exec_depend>gstreamer1.0</exec_depend>
   <exec_depend>gstreamer1.0-alsa</exec_depend>
   <exec_depend>gstreamer1.0-plugins-base</exec_depend>

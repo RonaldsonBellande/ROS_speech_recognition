@@ -1,25 +1,29 @@
 <?xml version="1.0"?>
+<package format="2">
 
-<package>
   <name>audio_capture</name>
   <version>0.3.12</version>
-  <description>
-      just an example
-  </description>
+  <description>just an example</description>
   <maintainer email="ronaldsonbellande@gmail.com">Ronaldson Bellande</maintainer>
 
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
   <build_depend>audio_common_msgs</build_depend>
   <build_depend>libgstreamer1.0-dev</build_depend>
   <build_depend>libgstreamer-plugins-base1.0-dev</build_depend>
 
-  <run_depend>roscpp</run_depend>
-  <run_depend>audio_common_msgs</run_depend>
-  <run_depend>gstreamer1.0</run_depend>
-  <run_depend>gstreamer1.0-plugins-base</run_depend>
-  <run_depend>gstreamer1.0-plugins-good</run_depend>
-  <run_depend>gstreamer1.0-plugins-ugly</run_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>audio_common_msgs</build_export_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>audio_common_msgs</exec_depend>
+  <exec_depend>gstreamer1.0</exec_depend>
+  <exec_depend>gstreamer1.0-plugins-base</exec_depend>
+  <exec_depend>gstreamer1.0-plugins-good</exec_depend>
+  <exec_depend>gstreamer1.0-plugins-ugly</exec_depend>
 </package>
