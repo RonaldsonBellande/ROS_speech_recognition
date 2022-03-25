@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
 <package format="2">
-
   <name>audio_capture</name>
   <version>0.3.12</version>
   <description>just an example</description>
   <maintainer email="ronaldsonbellande@gmail.com">Ronaldson Bellande</maintainer>
-
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
 
