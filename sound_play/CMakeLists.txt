@@ -1,8 +1,13 @@
-cmake_minimum_required(VERSION 2.8.3)
-
+cmake_minimum_required(VERSION 3.0.2)
 project(sound_play)
 
-find_package(catkin REQUIRED COMPONENTS message_generation roscpp actionlib_msgs)
+find_package(
+  catkin REQUIRED COMPONENTS
+  message_generation
+  roscpp
+  rospy
+  actionlib_msgs
+)
 
 add_action_files(DIRECTORY action FILES SoundRequest.action)
 add_message_files(DIRECTORY msg FILES SoundRequest.msg)
@@ -14,7 +19,11 @@ catkin_python_setup()
 generate_messages(DEPENDENCIES actionlib_msgs)
 
 catkin_package(
-  CATKIN_DEPENDS message_runtime actionlib_msgs
+  CATKIN_DEPENDS
+  message_runtime
+  roscpp
+  rospy
+  actionlib_msgs
   INCLUDE_DIRS include
 )
 
