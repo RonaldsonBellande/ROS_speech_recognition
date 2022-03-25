@@ -8,7 +8,7 @@ find_package(
   audio_common_msgs
 )
 
-find_package(PkgConfig)
+find_package(PkgConfig REQUIRED)
 pkg_check_modules(GST1.0 gstreamer-1.0 REQUIRED)
 
 find_package(Boost REQUIRED COMPONENTS thread)
@@ -19,11 +19,16 @@ include_directories(
   ${GST1.0_INCLUDE_DIRS}
 )
 
+
 catkin_package(
   INCLUDE_DIRS
+  CATKIN_DEPENDS
   roscpp
   rospy
-  audio_common_msgs
+  sensor_msgs
+  std_msgs
+  DEPENDS Boost GST1.0
+  LIBRARIES audio_capture
 )
 
 add_executable(
