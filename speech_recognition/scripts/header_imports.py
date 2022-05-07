@@ -60,32 +60,43 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping, TensorB
 from tensorflow.keras.utils import to_categorical
 import matplotlib.image as img
 
+import gym
+from gym import error, spaces, utils
+
 from contextlib import redirect_stdout
 from multiprocessing import Pool
 warnings.filterwarnings('ignore')
 plt.style.use('ggplot')
 
+from tensorflow.python.client import device_lib
 nvidia_smi.nvmlInit()
 handle = nvidia_smi.nvmlDeviceGetHandleByIndex(0)
 info = nvidia_smi.nvmlDeviceGetMemoryInfo(handle)
 
 if info.free < 964157696:
-    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+   os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-from tensorflow.python.client import device_lib
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 device_name = [x.name for x in device_lib.list_local_devices() if x.device_type == 'GPU']
 
 if device_name != []:
-    device_name = "/device:GPU:0"
-    print("GPU")
+   gpus = tf.config.experimental.list_physical_devices('GPU')
+   tf.config.experimental.set_memory_growth(gpus[0], True)
+   tf.config.experimental.set_virtual_device_configuration(gpus[0],[tf.config.experimental.VirtualDeviceConfiguration(memory_limit=512)])
+   tensorflow_strategy = tf.distribute.MirroredStrategy(devices= ["/cpu:0", "/gpu:0"],cross_device_ops=tf.distribute.HierarchicalCopyAllReduce())
+   print("GPU GROWTH")
 else:
-    device_name = "/device:CPU:0"
-    print("CPU")
+   device_name = "/device:CPU:0"
+   tensorflow_strategy = tf.distribute.MirroredStrategy(["CPU:0"])
+   print("CPU")
 
 
-from speech_model_building import *
-from speech_model_training import *
-from speech_model_transfer_learning import *
-from speech_model_classification import *
-from deep_learning_model import *
-from deep_q_learning import *
+from all_models import *
+from speech_recognition_system.plot_and_animation import *
+from speech_recognition_system.speech_model_building import *
+from speech_recognition_system.speech_model_training import *
+from speech_recognition_system.speech_model_transfer_learning import *
+from speech_recognition_system.speech_model_classification import *
+from speech_recognition_system.deep_learning_model import *
+from speech_recognition_system.speech_enviroment import *
+from speech_recognition_system.speech_continuous_learning import *

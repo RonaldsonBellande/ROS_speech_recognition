@@ -1,0 +1,65 @@
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ conv2d (Conv2D)             (None, 120, 100, 64)      1088      
+                                                                 
+ max_pooling2d (MaxPooling2D  (None, 60, 50, 64)       0         
+ )                                                               
+                                                                 
+ dropout (Dropout)           (None, 60, 50, 64)        0         
+                                                                 
+ conv2d_1 (Conv2D)           (None, 60, 50, 32)        32800     
+                                                                 
+ activation (Activation)     (None, 60, 50, 32)        0         
+                                                                 
+ dropout_1 (Dropout)         (None, 60, 50, 32)        0         
+                                                                 
+ conv2d_2 (Conv2D)           (None, 60, 50, 64)        32832     
+                                                                 
+ max_pooling2d_1 (MaxPooling  (None, 30, 25, 64)       0         
+ 2D)                                                             
+                                                                 
+ dropout_2 (Dropout)         (None, 30, 25, 64)        0         
+                                                                 
+ conv2d_3 (Conv2D)           (None, 30, 25, 32)        32800     
+                                                                 
+ activation_1 (Activation)   (None, 30, 25, 32)        0         
+                                                                 
+ dropout_3 (Dropout)         (None, 30, 25, 32)        0         
+                                                                 
+ conv2d_4 (Conv2D)           (None, 30, 25, 64)        32832     
+                                                                 
+ max_pooling2d_2 (MaxPooling  (None, 15, 12, 64)       0         
+ 2D)                                                             
+                                                                 
+ dropout_4 (Dropout)         (None, 15, 12, 64)        0         
+                                                                 
+ conv2d_5 (Conv2D)           (None, 15, 12, 32)        32800     
+                                                                 
+ activation_2 (Activation)   (None, 15, 12, 32)        0         
+                                                                 
+ dropout_5 (Dropout)         (None, 15, 12, 32)        0         
+                                                                 
+ conv2d_6 (Conv2D)           (None, 15, 12, 64)        32832     
+                                                                 
+ max_pooling2d_3 (MaxPooling  (None, 7, 6, 64)         0         
+ 2D)                                                             
+                                                                 
+ dropout_6 (Dropout)         (None, 7, 6, 64)          0         
+                                                                 
+ conv2d_7 (Conv2D)           (None, 7, 6, 32)          32800     
+                                                                 
+ activation_3 (Activation)   (None, 7, 6, 32)          0         
+                                                                 
+ dropout_7 (Dropout)         (None, 7, 6, 32)          0         
+                                                                 
+ flatten (Flatten)           (None, 1344)              0         
+                                                                 
+ dense (Dense)               (None, 19)                25555     
+                                                                 
+=================================================================
+Total params: 256,339
+Trainable params: 256,339
+Non-trainable params: 0
+_________________________________________________________________
