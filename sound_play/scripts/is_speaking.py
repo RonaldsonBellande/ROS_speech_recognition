@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-
 from actionlib_msgs.msg import GoalStatusArray
 import rospy
 import std_msgs.msg
