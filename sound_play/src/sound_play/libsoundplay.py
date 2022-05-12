@@ -33,6 +33,7 @@
 #***********************************************************
 
 # Author: Blaise Gassend
+# Maintainer: Ronaldson Bellande
 
 import rospy
 import roslib
